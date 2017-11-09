@@ -3,7 +3,7 @@
   $email = "";
   $passwort = "";
   // $_SERVER['PHP_SELF'] = login.php in diesem Fall (also die PHP-Datei, die gerade ausgeführt wird).
-  // Mit andern Worten: Nach Senden des Formulars wird wieder login.php aufgerufen. 
+  // Mit andern Worten: Nach Senden des Formulars wird wieder login.php aufgerufen.
   // Die Funktionen zur Überprüfung, ob die Login-Daten gültig sind, muss also hier oben im PHP-Teil stehen!
   // Wenn Login-Daten korrekt sind:
   // Session-Variable mit Benutzer-ID setzen und Wechsel in Memberbereich
