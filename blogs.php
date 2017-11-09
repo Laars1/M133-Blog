@@ -13,15 +13,8 @@
 foreach ($blogs as $blog){
 	echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
 	if($blog['uid'] == $blogId){
-		echo "hallo";
+
 	}
 }
-
-
-
-foreach ($blogs as $blog){
-	
-}
-
 ?>
 
