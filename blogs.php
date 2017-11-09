@@ -8,10 +8,20 @@
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe Ã¼ber alle Blogs und der Ausgabe mit PHP ersetzt werden
   
 	$blogs = getUserNames();
+	$blogId = $_GET['bid'];
 
 foreach ($blogs as $blog){
 	echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+	if($blog['uid'] == $blogId){
+		echo "hallo";
+	}
 }
-echo "asdf";
+
+
+
+foreach ($blogs as $blog){
+	
+}
+
 ?>
 
