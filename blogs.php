@@ -11,9 +11,12 @@
 	$blogId = $_GET['bid'];
 
 foreach ($blogs as $blog){
-	echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
-	if($blog['uid'] == $blogId){
 
+	if($blog['uid'] == $blogId){
+		echo "<div style='background-color:yellow'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+	}
+	else{
+		echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
 	}
 }
 ?>

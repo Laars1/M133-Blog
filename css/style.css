@@ -1,7 +1,3 @@
-a:ACTIVE {
+div a:visited{
 	background-color: red;
-}
-
-a{
-	color: green;
 }
