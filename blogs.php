@@ -13,10 +13,10 @@
 foreach ($blogs as $blog){
 
 	if($blog['uid'] == $blogId){
-		echo "<div style='background-color:yellow'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+		echo "<div class='autor' style='background-color:#FF00FF'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
 	}
 	else{
-		echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+		echo "<div class='autor'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
 	}
 }
 ?>
