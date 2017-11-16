@@ -14,7 +14,18 @@ foreach ($entries as $entry){
 	$title = $entry['title'];
 	$content = $entry['content'];
 	
-	echo $title." ".$time."<br>".$content;
+	echo "<div class='blog'>";
+	echo "<div class='title'>";
+	echo $title." ".$time;
+	echo "</div>";
+	echo "<br>";
+	echo "<div class='content'>";
+	echo $content;
+	echo "</div>";
+	echo "</div>";
+	echo "<br>";
+	echo "<br>";
+	
 }
 
 ?>
