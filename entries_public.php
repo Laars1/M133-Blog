@@ -12,7 +12,7 @@ foreach ($entries as $entry){
 	$timestamp= $entry['datetime'];
 	$time = gmdate("d-m-Y H:i:s", $timestamp);
 	$title = $entry['title'];
-	$content = $entry['content'];
+	$content = nl2br($entry['content']);
 	
 	echo "<div class='blog'>";
 	echo "<div class='title'>";

@@ -1,9 +1,11 @@
 .title{
 	font-size: 30px;
+	font-family: 'Anton', sans-serif;
 }
 
 .content{
 	font-size: 18px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 .blog{
 	border: 1px;
