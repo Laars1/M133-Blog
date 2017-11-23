@@ -44,7 +44,7 @@
       </div>
       <ul class="nav navbar-nav">
 		<?php 
-		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
+		  echo "<li><a id='login' href='index.php?function=login&bid=$blogId'>Login</a></li>";
 		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
 		  echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
 		?>

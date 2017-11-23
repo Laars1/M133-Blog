@@ -9,9 +9,6 @@
   
 
 	$colors = ['#CCE5FF', "#CCCCFF", "#FFCCFF", "#FFCCCC", "#FFE5CC", "#E5FFCC", "#CCFFFF", "#FFCCE5"];
-	
-	
-	
 	$number = mt_rand (0 ,7);
 	
   
