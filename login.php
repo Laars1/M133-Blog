@@ -11,6 +11,14 @@
   // header('Location: index.php?function=entries_member');
   // Wenn Formular gesendet worden ist, die Login-Daten aber nicht korrekt sind:
   // Unten auf der Seite Anzeige der Fehlermeldung.
+  
+  if (ISSET($_POST['email']) == True  && isset($_POST['passwort']) == True){
+  	$email = $_POST['email'];
+  	$passwort = $_POST['passwort'];
+  }
+  
+  var_dump($email, $passwort);
+  
 ?>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=login"; ?>">
   <label for="email">Benutzername</label>
