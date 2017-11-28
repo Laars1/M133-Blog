@@ -4,7 +4,13 @@
 
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 
-$uid = $_GET['bid'];
+if (isset($_SESSION['userId']) == True){
+	$uid = $_SESSION['userId'];
+}
+else{
+		$uid = $_GET['bid'];
+	}
+
 $entries = getEntries($uid);
 
 foreach ($entries as $entry){

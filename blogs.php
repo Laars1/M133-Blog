@@ -14,15 +14,24 @@
   
 	$blogs = getUserNames();
 	$blogId = $_GET['bid'];
+	
+	
 
-foreach ($blogs as $blog){
+	if (isset($_SESSION['userId']) == True){
+		header("Location: index.php?function=entries_public");
+	}
+	else {
+		foreach ($blogs as $blog){
+			
+			if($blog['uid'] == $blogId){
+				echo "<div class='autor' style='background-color:".$colors[$number]."'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+			}
+			else{
+				echo "<div class='autor'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+			}
+	}
+	
 
-	if($blog['uid'] == $blogId){
-		echo "<div class='autor' style='background-color:".$colors[$number]."'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
-	}
-	else{
-		echo "<div class='autor'><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
-	}
 }
 ?>
 

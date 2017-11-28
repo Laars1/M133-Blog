@@ -26,31 +26,28 @@
   	else{
   		$meldung = "Error! You're fucking stupid!";
   	}
-  }
-
-  	
-  
-  
-  var_dump($email, $passwort);
   
 ?>
+<div class="loginform">
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=login"; ?>">
-  <label for="email">Benutzername</label>
+  <label for="email" class="logintext">Benutzername</label>
   <div>
 	<input type="email" id="email" name="email" placeholder="E-Mail" value="" />
   </div>
-  <label for="passwort">Passwort</label>
+  <label for="passwort" class="logintext">Passwort</label>
   <div>
 	<input type="password" id="passwort" name="passwort" placeholder="Passwort" value="" />
   </div>
   <div>
-	<button type="submit">senden</button>
+	<button type="submit" id="submitButton">senden</button>
   </div>
 </form>
+
 <?php 
 if (isset($meldung) == TRUE){
 	echo "<div>";
-	echo "<p>".$meldung."</p>";
+	echo "<p id='errormessage'>".$meldung."</p>";
 	echo "</div>";
 }
 ?>
+</div>

@@ -27,3 +27,30 @@
 	margin-right: 35%;
 	margin-bottom: 2%;
 }
+
+.loginform{
+	border: 1px;
+	border-style: solid;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #F0F0F0;
+	text-align: center;
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+.logintext{
+	font-family: 'Anton', sans-serif;
+	font-size: 25px;
+}
+
+#submitButton{
+	margin-top: 30px;
+}
+
+#errormessage{
+	margin-top: 30px;
+	font-size: 20px;
+	text-align: center;
+	color: red;
+}
