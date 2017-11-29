@@ -26,6 +26,7 @@
   	else{
   		$meldung = "Error! You're fucking stupid!";
   	}
+  }
   
 ?>
 <div class="loginform">
@@ -46,7 +47,7 @@
 <?php 
 if (isset($meldung) == TRUE){
 	echo "<div>";
-	echo "<p id='errormessage'>".$meldung."</p>";
+	//echo "<p id='errormessage'>".$meldung."</p>";
 	echo "</div>";
 }
 ?>
