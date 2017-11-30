@@ -50,16 +50,21 @@
 		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
       </div>
       <ul class="nav navbar-nav">
-		<?php 
+		<?php 	
+		echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
 			if (isset($_SESSION['userId'])){
-				echo "<li><a id='login' href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
+				echo "<li><a href='index.php?function=blogs&bid=$blogId'>Beitrag hinzufügen</a></li>";
 			}
 			else{
-				echo "<li><a id='login' href='index.php?function=login&bid=$blogId'>Login</a></li>";
+				echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
 			}
 		  
-		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
-		  echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
+		  if (isset($_SESSION['userId'])){
+		  	echo "<li><a id='login' href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
+		  }
+		  else{
+		  	echo "<li><a id='login' href='index.php?function=login&bid=$blogId'>Login</a></li>";
+		  }
 		?>
       </ul>
 	</div>
