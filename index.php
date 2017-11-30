@@ -54,17 +54,12 @@
 		echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
 			if (isset($_SESSION['userId'])){
 				echo "<li><a href='index.php?function=emptyPage&bid=$blogId'>Beitrag hinzufügen</a></li>";
+				echo "<li><a id='login' href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
 			}
 			else{
 				echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
+				echo "<li><a id='login' href='index.php?function=login&bid=$blogId'>Login</a></li>";
 			}
-		  
-		  if (isset($_SESSION['userId'])){
-		  	echo "<li><a id='login' href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
-		  }
-		  else{
-		  	echo "<li><a id='login' href='index.php?function=login&bid=$blogId'>Login</a></li>";
-		  }
 		?>
       </ul>
 	</div>

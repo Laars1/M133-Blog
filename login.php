@@ -24,7 +24,7 @@
   		header("Location: index.php?function=entries_public&bid=".getMaxEntryId($userId));
   	}
   	else{
-  		$meldung = "Error! You're fucking stupid!";
+  		$meldung = "Benutzername oder Passwort falsch!";
   	}
   }
   

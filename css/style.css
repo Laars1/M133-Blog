@@ -13,7 +13,16 @@
 	border-radius: 10px;
 	padding: 10px;
 	background-color: #F0F0F0;
+	display: inline-block;
+	margin-left: 20%;
 }
+
+.container{
+	margin-left: 10%;
+	margin-right: auto;
+}
+
+
 
 .autor{
 	border: 1px;
@@ -53,4 +62,31 @@
 	font-size: 20px;
 	text-align: center;
 	color: red;
+}
+
+
+.leftside{
+	width: 200px;
+	display: inline-block;
+	position: fixed;
+	margin-right: 300px;
+}
+
+.box{
+	border: 1px;
+	border-style: solid;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #F0F0F0;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.title2{
+	display: inline-block;
+	margin: 0px
+}
+
+.box:hover{
+	background-color: #CCFFFF;
 }
