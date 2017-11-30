@@ -21,7 +21,7 @@
   	
   	if ($userId != 0){
   		$_SESSION['userId']=$userId;
-  		header("Location: index.php?function=emptyPage&bid=".getMaxEntryId($userId));
+  		header("Location: index.php?function=entries_public&bid=".getMaxEntryId($userId));
   	}
   	else{
   		$meldung = "Error! You're fucking stupid!";
