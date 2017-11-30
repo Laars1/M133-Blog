@@ -12,11 +12,11 @@
   if (isset($_GET['function'])) $function = $_GET['function'];
   else $function = "login";
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
-  if (isset($_GET['bid'])){
-  	$blogId = $_GET['bid'];
+  if (isset($_SESSION['userId'])){
+  	$blogId = $_SESSION['userId'];
   }
-  else if (isset($_SESSION['userId'])){
-  	 $blogId = $_SESSION['userId'];
+  else if (isset($_GET['bid'])){
+  	$blogId = $_GET['bid'];
   }
   else{
   	$blogId = 0;
