@@ -13,7 +13,7 @@ if (isset ( $_SESSION ['userId'] ) == True) {
 if (isset ( $_GET ['eid'] )) {
 	$eid = $_GET ['eid'];
 } else {
-	$eid = 0;
+	$eid = 1;
 }
 
 $entries = getEntries ( $uid );
