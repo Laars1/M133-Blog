@@ -33,6 +33,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="include/functions.js"></script>
@@ -53,7 +54,7 @@
 		<?php 	
 		echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
 			if (isset($_SESSION['userId'])){
-				echo "<li><a href='index.php?function=emptyPage&bid=$blogId'>Beitrag hinzufügen</a></li>";
+				echo "<li><a href='index.php?function=blogCreate&bid=$blogId'>Beitrag hinzufügen</a></li>";
 				echo "<li><a id='login' href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
 			}
 			else{

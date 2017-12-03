@@ -19,7 +19,7 @@
 
 .container{
 	margin-left: 10%;
-	margin-right: auto;
+	margin-right: -300px;
 }
 
 
@@ -89,4 +89,31 @@
 
 .box:hover{
 	background-color: #CCFFFF;
+}
+
+.divicons{
+	float: right;
+	margin-right: 10px;
+	margin-bottom: -5px;
+	padding: 5px;
+	border-top: 1px;
+	border-left: 1px;
+	border-right: 1px;
+	border-bottom: 0;
+	border-style: solid;
+	border-radius: 10px;
+	background-color: #F0F0F0;
+}
+
+#pencil{
+	color: black;
+	width: 50px;
+}
+
+#titeltext{
+	width: 900px;
+}
+
+textarea{
+	resize: none;
 }

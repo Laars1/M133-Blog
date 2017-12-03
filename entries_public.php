@@ -50,8 +50,11 @@ if (isset ( $_SESSION ['userId'] )) {
 	$title = $entry ['title'];
 	$content = nl2br ( $entry ['content'] );
 	
+	echo "<div class='divicons'>";
+	echo "<a id='pencil' href=index.php?function=blogCreate&bid=$uid'&eid=" . $entry ['eid'] . "><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></a>";
+	echo "<i class='fa fa-times fa-2x' aria-hidden='true'></i>";
+	echo "</div>";
 	echo "<div class='blog'>";
-	echo "<i class='fa fa-pencil' aria-hidden='true'></i>";
 	echo "<div class='title'>";
 	echo $title . " " . $time;
 	echo "</div>";
@@ -60,8 +63,8 @@ if (isset ( $_SESSION ['userId'] )) {
 	echo $content;
 	echo "</div>";
 	echo "</div>";
-	echo "<br>";
-	echo "<br>";
+
+	
 } else {
 	foreach ( $entries as $entry ) {
 		
