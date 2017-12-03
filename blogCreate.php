@@ -1,36 +1,71 @@
 <?php
 $eidSet = false;
-if (isset($_GET['eid'])){
-	$eid = $_GET['eid'];
-	$eidSet = true;
-}
-$uid = $_GET['bid'];
 
-if ($eidSet==true){
-	$entry = getEntry ($eid);
+#Get UserID
+if (isset ( $_GET ['bid'] )) {
+	$uid = $_GET ['bid'];
+} else if (isset ( $_GET ['uid'] )) {
+	$uid = $_GET ['uid'];
+}
+
+#Get EntryId
+if (isset ( $_GET ['eid'] )) {
+	$eid = $_GET ['eid'];
+	$eidSet = true;
+	$url = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid . "&eid=" . $eid;
+} else {
+	$url = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid;
+}
+
+#Check if eid is set
+if ($eidSet == true) {
+	$entry = getEntry ( $eid );
 	$title = $entry ['title'];
 	$content = $entry ['content'];
+} else {
+	$title = "";
+	$content = "";
 }
-else{
-	$title="";
-	$content="";
+
+if (ISSET ( $_POST ['titel'] ) == True && isset ( $_POST ['inhalt'] ) == True) {
+	$titelnew = $_POST ['titel'];
+	$inhalt = $_POST ['inhalt'];
+	
+	if (strlen ( $titelnew ) > 3 && strlen ( $inhalt ) > 10) {
+		if ($eidSet == true) {
+			// Datei aktualisieren
+			echo "<div class='feedbackOK'>";
+			echo "<p class='ok'>Ihr Beitrag wurde erflogreich aktualisiert</p>";
+			echo "<i class='fa fa-check-circle-o fa-2x' aria-hidden='true'></i>";
+			echo "</div>";
+		} else {
+			// Neue Datei erstellen
+			echo "<div class='feedbackOK'>";
+			echo "<p class='ok'>Ihr Beitrag wurde erflogreich erstellt</p>";
+			echo "<i class='fa fa-check-circle-o fa-2x' aria-hidden='true'></i>";
+			echo "</div>";
+		}
+	} else {
+		echo "<div class='feedbackNOK'>";
+		echo "<p id='nok'>Einer oder beide Texte sind zu kurz!</p>";
+		echo "<i class='fa fa-times fa-2x' aria-hidden='true'></i>";
+		echo "</div>";
+	}
 }
 ?>
 
 <div class="blogcrete">
+	<form method="post" action="<?php echo $url; ?>">
+		<label for="title" class="logintext">Titel</label>
+		<div>
+			<textarea rows="1" cols="100" name="titel"><?php echo $title;?></textarea>
+		</div>
+		<label for="Inhalt" class="bloginhalt">Inhalt</label>
+		<div>
+			<textarea rows="10" cols="100" name="inhalt"><?php echo $content;?></textarea>
+		</div>
 
-  <label for="title" class="logintext">Titel</label>
-  <div>
-	<textarea rows="1" cols="100" ><?php echo $title;?></textarea>
-  </div>
-  <label for="Inhalt" class="bloginhalt">Inhalt</label>
-  <div>
-	<textarea rows="10" cols="100"><?php echo $content;?></textarea>
-  </div>
-  <div>
-	<button type="submit" id="submitButton">senden</button>
-	<button type="submit" id="deleteButton">löschen</button>
-	<button type="submit" id="discardButton">abbrechen</button>
-  </div>
+		<button type="submit" id="submitButton">senden</button>
+	</form>
 
 </div>
