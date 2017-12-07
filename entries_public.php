@@ -3,6 +3,12 @@
 // Hier Code... (Schlaufe über alle Einträge dieses Blogs)
 
 // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
+if (isset($_GET['action'])){
+	if ($_GET['action'] == "delete"){
+		include_once("deleteEntry.php");
+	}
+}
+
 $color = "#CCFFFF";
 if (isset ( $_SESSION ['userId'] ) == True) {
 	$uid = $_SESSION ['userId'];
@@ -12,9 +18,15 @@ if (isset ( $_SESSION ['userId'] ) == True) {
 
 if (isset ( $_GET ['eid'] )) {
 	$eid = $_GET ['eid'];
-} else {
+}
+else if(isset($_GET['action'])){
 	$eid = 1;
 }
+else {
+	$eid = 1;
+}
+
+
 
 $entries = getEntries ( $uid );
 
@@ -52,7 +64,13 @@ if (isset ( $_SESSION ['userId'] )) {
 	
 	echo "<div class='divicons'>";
 	echo "<a id='pencil' href=index.php?function=blogCreate&bid=$uid'&eid=" . $entry ['eid'] . "><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></a>";
-	echo "<i class='fa fa-times fa-2x' aria-hidden='true'></i>";
+	echo "<a id='pencil' href=index.php?function=entries_public&uid=".$uid."&eid=".$eid."&action=delete><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>";
+	if (isset($_POST['feedback1'])){
+		echo $_POST['feedback1'];
+		echo $_POST['feedback2'];
+		echo $_POST['feedback3'];
+		echo $_POST['feedback4'];
+	}
 	echo "</div>";
 	echo "<div class='blog'>";
 	echo "<div class='title'>";

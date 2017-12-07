@@ -14,10 +14,9 @@ if (isset ( $_GET ['eid'] )) {
 	$eid = $_GET ['eid'];
 	$eidSet = true;
 	$url = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid . "&eid=" . $eid;
-	$urlDelete = $url = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid . "&eid=" . $eid."&action=delete";
+	$urlDelete = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid . "&eid=" . $eid."&action=delete";
 } else {
 	$url = $_SERVER ['PHP_SELF'] . "?function=blogcreate&uid=" . $uid;
-	
 }
 
 #Check if eid is set
@@ -34,18 +33,14 @@ if ($eidSet == true) {
 //Check if user want to delete blog or create/update blog
 if (isset($_GET['action'])){
 	//Delete blog
-	if (deleteEntry($eid) == true){
-		echo "<div class='feedbackOK'>";
-		echo "<p class='ok'>Ihr Beitrag wurde erflogreich gelöscht</p>";
-		echo "<i class='fa fa-check-circle-o fa-2x' aria-hidden='true'></i>";
-		echo "</div>";
-	}
-	else{
-		echo "<div class='feedbackNOK'>";
-		echo "<p id='nok'>Löschen Fehlgeschlagen</p>";
-		echo "<i class='fa fa-times fa-2x' aria-hidden='true'></i>";
-		echo "</div>";
-	}
+	
+		include_once("deleteEntry.php");
+		//var_dump($_POST['feedback1']);
+		echo $_POST['feedback1'];
+		echo $_POST['feedback2'];
+		echo $_POST['feedback3'];
+		echo $_POST['feedback4'];
+
 }
 else{
 	if (ISSET ( $_POST ['titel'] ) == True && isset ( $_POST ['inhalt'] ) == True) {
