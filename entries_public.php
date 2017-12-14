@@ -56,32 +56,36 @@ if (isset ( $_SESSION ['userId'] )) {
 	}
 	echo "</div>";
 	
-	$entry = getEntry ( $eid );
-	$timestamp = $entry ['datetime'];
-	$time = gmdate ( "d-m-Y H:i:s", $timestamp );
-	$title = $entry ['title'];
-	$content = nl2br ( $entry ['content'] );
-	
-	echo "<div class='divicons'>";
-	echo "<a id='pencil' href=index.php?function=blogCreate&bid=$uid'&eid=" . $entry ['eid'] . "><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></a>";
-	echo "<a id='pencil' href=index.php?function=entries_public&uid=".$uid."&eid=".$eid."&action=delete><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>";
-	if (isset($_POST['feedback1'])){
-		echo $_POST['feedback1'];
-		echo $_POST['feedback2'];
-		echo $_POST['feedback3'];
-		echo $_POST['feedback4'];
+	if (getEntry ( $eid ) != false){
+		
+		$entry = getEntry ( $eid );
+		$timestamp = $entry ['datetime'];
+		$time = gmdate ( "d-m-Y H:i:s", $timestamp );
+		$title = $entry ['title'];
+		$content = nl2br ( $entry ['content'] );
+		
+		echo "<div class='divicons'>";
+		echo "<a id='pencil' href=index.php?function=blogCreate&bid=$uid'&eid=" . $entry ['eid'] . "><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></a>";
+		echo "<a id='pencil' href=index.php?function=entries_public&uid=".$uid."&eid=".$eid."&action=delete><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>";
+		if (isset($_POST['feedback1'])){
+			echo $_POST['feedback1'];
+			echo $_POST['feedback2'];
+			echo $_POST['feedback3'];
+			echo $_POST['feedback4'];
+		}
+		echo "</div>";
+		echo "<div class='blog'>";
+		echo "<div class='title'>";
+		echo $title . " " . $time;
+		echo "</div>";
+		echo "<br>";
+		echo "<div class='content'>";
+		echo $content;
+		echo "</div>";
+		echo "</div>";
+		
 	}
-	echo "</div>";
-	echo "<div class='blog'>";
-	echo "<div class='title'>";
-	echo $title . " " . $time;
-	echo "</div>";
-	echo "<br>";
-	echo "<div class='content'>";
-	echo $content;
-	echo "</div>";
-	echo "</div>";
-
+	
 	
 } else {
 	foreach ( $entries as $entry ) {

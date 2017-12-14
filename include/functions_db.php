@@ -97,7 +97,7 @@
 	$result = $db->query("SELECT eid, datetime, title, content, picture1, picture2, picture3 FROM entry WHERE eid=$eid");
 	if ($entry = $result->fetchArray()) {
 	  return $entry;
-	} else return "";
+	} else return false;
   }
 
   /************************************************************************************************
