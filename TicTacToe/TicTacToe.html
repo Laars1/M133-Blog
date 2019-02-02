@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="CSS.css">
+<script language="javascript" type="text/javascript" src="JS.js"></script>
+
+</head>
+<body onload="btnDeactivate()">
+<div class = "DivButton" >
+<button class = "Button" id="0_0" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="0_1" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="0_2" onclick="buttonOnClick(this)"></button>
+</div>
+<div class = "DivButton" >
+<button class = "Button" id="1_0" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="1_1" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="1_2" onclick="buttonOnClick(this)"></button>
+</div>
+<div class = "DivButton" >
+<button class = "Button" id="2_0" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="2_1" onclick="buttonOnClick(this)"></button>
+<button class = "Button" id="2_2" onclick="buttonOnClick(this)"></button>
+</div>
+
+<h2>Typ des Spielens:</h2>
+<div>
+<input type="radio" name="Spielart" value="MenschVSMensch" id="MenschVSMensch" checked="checked"><ul>Mensch vs Mensch</ul><br>
+<p class="SpielerFelder">Spieler 1: <input type="email" id="Spieler1" name="Spieler1" required="required" class="email" placeholder="TheRealBoss@gmail.com" onkeyup="validateEmail(this)"><br>
+<p class="SpielerFelder">Spieler 2: <input type="email" id="Spieler2" name="Spieler2" required="required" class="email" placeholder="Winner6597@hotmail.com" onkeyup="validateEmail(this)"><br>
+</div>
+
+<div>
+<input type="radio" name="Spielart" value="MenschVSRoboter" id="MenschVSRoboter"><ul>Mensch vs Roboter</ul><br>
+<p class="SpielerFelder">Spieler: <input type="email" name="Spieler" required="required" ><br>
+</div>
+
+<div>
+<input type="radio" name="Spielart" value="RoboterVSRoboter" id="RoboterVSRoboter"><ul>Roboter vs Roboter</ul><br>
+</div>
+
+
+<p id="Ausgabe"></p>
+
+<button id="Start" onclick="startOnClick()">Start</button>
+<button id="Reset">Reset</button>
+
+</body>
+
+
+
+
+
+
+</html>

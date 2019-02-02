@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+
+.Button{
+	width: 60px;
+	height: 60px;
+}
+
+.DivButton{
+	margin-left: 200px;
+}
+
+ul{
+	display: inline-block;
+	font-size: 20px;
+
+}
+
+.SpielerFelder{
+	margin-left: 50px;
+}
+
+/* .email:invalid {
+	border-style: solid;
+    border-width: 1px;
+    border-color: red;
+}
+
+.email:valid {
+	border-style: solid;
+    border-width: 3px;
+    border-color: green;
+} */
+
+.email#Spieler1{
+	color: #FF0000;
+}
+
+.email#Spieler2{
+	color: #000099;
+}
+
